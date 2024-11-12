@@ -8,9 +8,9 @@ CORS(app, resources={r"/*": {"origins": "*"}}, supports_credentials=True)
 
 def get_db_connection():
     conn = psycopg2.connect(
-        dbname='geotiff_viewer',
-        user='postgres',
-        password='admin',
+        dbname='evi_db',
+        user='pg',
+        password='***',
         host='localhost',
         port='5432'
     )
