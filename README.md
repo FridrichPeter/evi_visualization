@@ -50,4 +50,25 @@ raster2pgsql -s 4326 -I -C -M "/mnt/c/Users/...../file.tif" public.table_name | 
 e) Run the Flask Application
 ```
 python app.py
+#....http://localhost:5000
 ```
+### 2. Frontend Setup (React)
+```
+cd evi-map
+npm install
+npm start
+#....http://localhost:3000
+```
+🌍 Features
+Interactive Map: Visualize classified EVI data with color-coded layers.
+Dropdown Menu: Select different years to display vegetation data.
+Popup Information: Click on map regions to view detailed EVI values.
+Responsive Map Controls: Zoom, pan, and fullscreen options.
+
+🗺️ Map Legend
+EVI Value	Description	Color
+1	Low vegetation	🔴 Red
+2	Medium vegetation	🟠 Orange
+3	Dense vegetation	🟡 Yellow
+4	Very dense vegetation	🟢 Green
+5	Extremely dense veg.	🟣 Teal
