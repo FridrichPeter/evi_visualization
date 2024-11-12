@@ -22,6 +22,32 @@ Make sure you have the following installed:
 ## 🚀 Project Setup
 
 ### 1. Clone the Repository
-```bash
+```
 git clone https://github.com/FridrichPeter/evi_visualization.git
 cd evi-visualization
+```
+
+### 2. Backend Setup (Flask + PostgreSQL)
+a) Set up a Virtual Environment
+```
+python -m venv .venv
+source .venv/bin/activate   # On Windows: .venv\Scripts\activate
+```
+b) Create a PostgreSQL Database
+```
+CREATE DATABASE geotiff_viewer; 
+```
+c) Enable PostGIS Extension
+```
+\c geotiff_viewer;
+CREATE EXTENSION postgis;
+```
+d) Import GeoTIFF Data
+```
+raster2pgsql -s 4326 -I -C -M "/mnt/c/Users/...../file.tif" public.table_name | psql -U postgres -d geotiff_viewer -h localhost -p 5432
+
+```
+e) Run the Flask Application
+```
+python app.py
+```
